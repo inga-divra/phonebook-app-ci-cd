@@ -32,6 +32,7 @@ jobs:
       - name: Test
         env:
           MONGODB_URI: ${{ secrets.MONGODB_URI }}
+          TEST_MONGODB_URI: ${{ secrets.MONGODB_URI }}
         run: npm run test
 
       - name: Deploy to Render (Deploy Hook URL)
