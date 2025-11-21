@@ -27,7 +27,7 @@ test('another specific person is within the returned persons', async () => {
   const response = await api.get('/api/persons')
 
   const names = response.body.map((person) => person.name)
-  assert(names.includes('John Sture'))
+  assert(names.includes('Jussi Sture'))
 })
 
 test('a valid person can be added', async () => {
