@@ -1,0 +1,37 @@
+name: Deployment pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches: [main]
+    types: [opened, synchronize]
+
+env:
+  # the below will be 'true'
+  CONDITION: ${{ github.event_name == 'push' && !contains(join(github.event.commits.*.message, ' '), '#skip') }}
+
+jobs:
+  simple_deployment_pipeline:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: npm install
+      - name: Check style
+        run: npm run lint
+      - name: Build
+        working-directory: ./frontend
+        run: |
+          npm install
+          npm run build
+      - name: Test
+        run: npm run test
+
+      - name: Deploy to Render (Deploy Hook URL)
+        if: ${{ env.CONDITION == 'true' }}
+        run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
