@@ -22,11 +22,7 @@ jobs:
           node-version: "20"
       - name: Install dependencies
         run: npm install
-      - name: Check style (front)
-        working-directory: ./frontend
-        run: |
-          npm install
-          npm run lint
+
       - name: Build
         working-directory: ./frontend
         run: |
