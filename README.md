@@ -6,7 +6,7 @@ This is the backend of the Phonebook App – a simple RESTful API built with **N
 ## Live Demo
 
 The app is deployed and available here:  
-👉 [https://phonebook-app-karq.onrender.com/](https://phonebook-app-karq.onrender.com/)
+👉 [https://phonebook-app-karq.onrender.com/](https://phonebook-app-ci-cd.onrender.com/)
 
 
 ## Features
