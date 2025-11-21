@@ -2,12 +2,10 @@
 
 This is the backend of the Phonebook App – a simple RESTful API built with **Node.js** and **Express**. It allows users to manage a list of contacts with names and phone numbers.
 
-
 ## Live Demo
 
 The app is deployed and available here:  
 👉 [https://phonebook-app-karq.onrender.com/](https://phonebook-app-ci-cd.onrender.com/)
-
 
 ## Features
 
@@ -23,10 +21,19 @@ The app is deployed and available here:
 
 ## API Endpoints
 
-- `GET /api/persons` – Get all contacts  
-- `POST /api/persons` – Add a new contact  
-- `DELETE /api/persons/:id` – Delete a contact  
-- `PUT /api/persons/:id` – Update a contact  
+- `GET /api/persons` – Get all contacts
+- `POST /api/persons` – Add a new contact
+- `DELETE /api/persons/:id` – Delete a contact
+- `PUT /api/persons/:id` – Update a contact
 - `GET /info` – Show total number of contacts and current time
 
+## CI/CD Pipeline
 
+This repository includes my solution for Full Stack Open **Exercise 11.20 – Your Own Pipeline**.
+
+I implemented:
+
+- custom GitHub Actions workflow
+- automatic build
+- backend tests
+- deployment to Render using Deploy Hook
