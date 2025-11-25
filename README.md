@@ -37,3 +37,5 @@ I implemented:
 - automatic build
 - backend tests
 - deployment to Render using Deploy Hook
+
+**Change made in a protected branch for Exercise 11.21 (Pull Request demo)**
